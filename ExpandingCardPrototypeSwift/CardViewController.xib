@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CardViewController">
+            <connections>
+                <outlet property="bigContainerView" destination="BLV-14-NPG" id="mY9-Xn-sxw"/>
+                <outlet property="bigScrollView" destination="cS7-VP-16G" id="lcf-C1-rHf"/>
+                <outlet property="smallContainerView" destination="yg0-KB-ZRF" id="bg5-qH-y2w"/>
+                <outlet property="smallScrollViewBottomConstraint" destination="4zx-vu-7DR" id="dB4-Be-OdZ"/>
+                <outlet property="smallScrollViewLeftConstraint" destination="RLO-oU-fLN" id="80J-bu-6oh"/>
+                <outlet property="smallScrollViewRightConstraint" destination="hDd-F0-2pm" id="1Qs-xW-8aH"/>
+                <outlet property="smallScrollViewTopConstraint" destination="ee3-eW-yDC" id="tZc-QZ-TqQ"/>
+                <outlet property="tableView" destination="0XG-et-bKc" id="5lZ-oo-8cy"/>
+                <outlet property="view" destination="J2a-sR-ioq" id="Wch-mE-tNA"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="J2a-sR-ioq">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BLV-14-NPG" userLabel="Big Container View">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yg0-KB-ZRF" userLabel="Small Container View">
+                            <rect key="frame" x="180" y="150" width="15" height="367"/>
+                            <subviews>
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0XG-et-bKc">
+                                    <rect key="frame" x="0.0" y="0.0" width="15" height="367"/>
+                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <connections>
+                                        <outlet property="dataSource" destination="-1" id="xff-gG-IHq"/>
+                                        <outlet property="delegate" destination="-1" id="cp9-CP-Sfc"/>
+                                    </connections>
+                                </tableView>
+                            </subviews>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="0XG-et-bKc" firstAttribute="top" secondItem="yg0-KB-ZRF" secondAttribute="top" id="E3K-tb-UI3"/>
+                                <constraint firstItem="0XG-et-bKc" firstAttribute="leading" secondItem="yg0-KB-ZRF" secondAttribute="leading" id="itG-dX-DdL"/>
+                                <constraint firstAttribute="bottom" secondItem="0XG-et-bKc" secondAttribute="bottom" id="lbd-RC-YTm"/>
+                                <constraint firstAttribute="trailing" secondItem="0XG-et-bKc" secondAttribute="trailing" id="q6h-qt-0yA"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="yg0-KB-ZRF" secondAttribute="bottom" constant="150" id="4zx-vu-7DR"/>
+                        <constraint firstItem="yg0-KB-ZRF" firstAttribute="leading" secondItem="BLV-14-NPG" secondAttribute="leading" constant="180" id="RLO-oU-fLN"/>
+                        <constraint firstItem="yg0-KB-ZRF" firstAttribute="top" secondItem="BLV-14-NPG" secondAttribute="top" constant="150" id="ee3-eW-yDC"/>
+                        <constraint firstAttribute="trailing" secondItem="yg0-KB-ZRF" secondAttribute="trailing" constant="180" id="hDd-F0-2pm"/>
+                    </constraints>
+                </view>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cS7-VP-16G" userLabel="Big Scroll View">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="kVK-De-di7"/>
+                    </connections>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="cS7-VP-16G" firstAttribute="top" secondItem="J2a-sR-ioq" secondAttribute="top" id="JOT-YP-8me"/>
+                <constraint firstAttribute="bottom" secondItem="cS7-VP-16G" secondAttribute="bottom" id="K27-UM-Vd6"/>
+                <constraint firstAttribute="trailing" secondItem="cS7-VP-16G" secondAttribute="trailing" id="UKP-X0-InH"/>
+                <constraint firstAttribute="bottom" secondItem="BLV-14-NPG" secondAttribute="bottom" id="mkp-zl-Kav"/>
+                <constraint firstItem="BLV-14-NPG" firstAttribute="top" secondItem="J2a-sR-ioq" secondAttribute="top" id="onG-dD-egf"/>
+                <constraint firstItem="BLV-14-NPG" firstAttribute="leading" secondItem="J2a-sR-ioq" secondAttribute="leading" id="rV4-jX-vDh"/>
+                <constraint firstItem="cS7-VP-16G" firstAttribute="leading" secondItem="J2a-sR-ioq" secondAttribute="leading" id="xDT-2O-PIk"/>
+                <constraint firstAttribute="trailing" secondItem="BLV-14-NPG" secondAttribute="trailing" id="xZ3-K4-R2S"/>
+            </constraints>
+        </view>
+    </objects>
+</document>
